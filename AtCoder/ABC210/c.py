@@ -1,15 +1,17 @@
 N,K=(int(x) for x in input().split())
 c=list(int(x) for x in input().split())
-maxlen=0
-a = []
+Hatena=c[0:K+0:1]
+MaxLen = 1
 
-for i in range(N-K+1):
-    Hatena=c[i:K+i:1]
-    Hatena=len(list(set(Hatena)))
-    a.append(Hatena)
+for i in range(N-K):
+    Hatena.pop(0)
+    Hatena.append(c[K+i])
+    if MaxLen<len(list(set(Hatena))):
+        MaxLen=len(list(set(Hatena)))
 
-print(max(a))
+print(MaxLen)
 
 
 
-##TLE...
+
+
